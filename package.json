@@ -1,0 +1,24 @@
+{
+  "name": "blinker-lite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start ./api/app.js --name \"blinker-api\" && pm2 start ./broker/broker.js --name \"blinker-broker\"",
+    "list": "pm2 list",
+    "stop": "pm2 stop blinker-api blinker-broker"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aedes": "^0.49.0",
+    "fastify": "^4.18.0",
+    "ioredis": "^5.3.2",
+    "knex": "^2.4.2",
+    "objection": "^3.0.1",
+    "objection-guid": "^3.1.0",
+    "pm2": "^5.3.0",
+    "sqlite3": "^5.1.6"
+  }
+}
