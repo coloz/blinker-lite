@@ -22,7 +22,6 @@ function transponder(options = {}) {
 
   // 处理数据转发
   broker.on('publish', async (packet, client) => {
-    // console.log('Client \x1b[31m' + (client ? client.id : 'BROKER_' + broker.id) + '\x1b[0m has published', packet.payload.toString(), 'on', packet.topic)
     if (!client) return;
     // 检查是否为toDevice 或 toGroup
     if (packet.payload.indexOf('"toDevice":') < 0 && packet.payload.indexOf('"toGroup":') < 0) return
